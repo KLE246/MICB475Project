@@ -49,5 +49,16 @@ Potential questions:
 - Finalize dataset and research question
 - Start proposal outline
     - Split responsibilities
-- \(stretch goal\) Load all data and begin QIIME work 
+- \(stretch goal\) Load all data and begin QIIME work
 
+
+## W6-TM - Week 6 Team Meeting
+
+### Agenda
+1. 
+
+### Meeting notes:
+- 
+
+### Tasks for the week
+-
