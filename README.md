@@ -11,7 +11,7 @@ Dennis Xie
 |Experiment # | Title | Dates | Link |
 | --- | ------------------- | ----- | ---------|
 | W5-TM | Week 5 Team Meeting | 2023-10-04 - 2023-10-10 | [jump](#w5-tm---week-5-team-meeting) |
-| | | |
+| W6-TM | Week 6 Team Meeting | 2023-10-11 - 2023-10-17 | [jump](#w6-tm---week-6-team-meeting) |
 | | | |
 | | | |
 | | | |
@@ -55,10 +55,37 @@ Potential questions:
 ## W6-TM - Week 6 Team Meeting
 
 ### Agenda
-1. 
+1. Go through assigned responsibilities for the proposal. Original proposal:
+   - Risa - Introduction and Background
+   - Kevin, Stella - Research Objective, Experimental Aim, Proposed Approach, Overview Flowchart, Weekly Timeframe
+   - Dennis, Michael - Dataset Overview
+2. Discussion Areas:
+   - Discuss experimental aims - amount of aims we should have and how we should approach this section
+   - Starting points to be included in the weekly timeframe
+   - Confirm collection sites for the anemia and infant datasets and potential methods of comparing them for the research question
 
 ### Meeting notes:
-- 
-
+- Reassess assigned responsibilities to split roles evenly:
+    - Risa -  Introduction and Background, Weekly Timeframe
+    - Kevin, Stella - Research Objective, Experimental Aim, Overview Flowchart
+    - Dennis, Michael - Proposed Approach, Dataset Overview
+- Breaking down outline:
+    - Research objective and experimental aims should be done together
+    - Background should consist of a broad introduction giving context; no direct reference to dataset
+    - Research objective should consist of a topical overview
+    - Experimental aims should consist of specific variables of focus and how we plan to tackle them, providing context on why aims were chosen
+        -  Want minimum 3 aims: Diversity, Bacterial taxa, comparison of cohorts
+        -  Diversity recommendation: Wilcoxon test (Alpha) and Permanova (Beta)
+        -  Differential abundance recommendation: DEseq2
+        -  Other aims to consider: Functional analysis (using PyCrust), Generate Taxonomic Barplots
+    - Weekly timeframe - copy gantt chart in examples; include as much information as possible
+    - Overview flowchart - add as many parameters as possible, mentioning specific tools (QIIME2 VS R), diversity metrics, statistical calculation method, and differential abundance measurement used
+ - Differentiating and incorporating cohorts:
+    - Provide brief overview for each cohort, specifically focusing on geographical differences
+    - Can refer to the different living standards and their impact on the microbiome
+    - Would need to find and reference papers to explain experimental conclusions
+      
 ### Tasks for the week
--
+- Begin proposal content
+    - Split responsibilities internally between general teams
+  
