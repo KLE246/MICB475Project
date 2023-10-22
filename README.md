@@ -153,3 +153,21 @@ Potential questions:
  ### Tasks for the week
 - Complete proposal with given edits
 - Run proposal through spell and grammar check
+
+
+### Infant dataset processing methods:
+1.  Connect to UBC’s VPN and log into MICB 475 class server through secure shell ssh on Windows Terminal.
+2.  Create a directory in the data directory called infant: /data/infant/
+3.  Import and demultiplex infant data using a manifest. Outputted files: infant_seqs.qza
+    - Infant dataset located in /mnt/datasets/project_2/infant/
+4.  A visualization of demultiplexed samples was created and scp command was used to transfer the file to local directory. Outputted files: infant_seqs.qzv
+5.  Appropriate truncation length was determined through visualization on Qiime 2 View by looking at the interactive quality plot.
+6.  Denoise with truncation length 150, left 0. Outputted files: rep-seqsi.qza, tablei.qza, statsi.qza
+7.  Visualization for DADA 2 stats were generated and scp command was used to transfer files to the local directory. Outputted files: statsi.qzv
+8.  Table (tablei.qza) file was filtered using Qiime for 6 month old infants and infants that were at least partially breastfed. Outputted files: final-filtered-table.qza, final-filtered-table.qzv
+    - 6 month old infants were filtered using “[age_category]='6 months '”
+    - Partially breastfed infants were filtered using “[feed] IN ('breast', 'combined')”
+9.  Taxonomic analysis done by training Silva 138-99 database using 515F-806R primers. Outputted files: ref-seqs-trimmed.qza, classifier.qza, taxonomyi.qza
+10.  Tree for phylogenetic diversity analysis was generated using the rep-seqsi.qza file. Outputted files: rooted-treei.qza
+11.  Alpha rarefaction generates a rarefaction curve which was used to determine sampling depth. 23,647 was set as maximum sampling depth to retain all samples. Scp command was used to transfer visualization to local directory. Outputted files: alpha-rarefactioni.qzv
+12.  Diversity metrics for alpha and beta diversity are done at a sampling depth of 20,000. Outputted directory: core-metrics-results 
