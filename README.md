@@ -13,7 +13,7 @@ Dennis Xie
 | W5-TM | Week 5 Team Meeting | 2023-10-04 - 2023-10-10 | [jump](#w5-tm---week-5-team-meeting) |
 | W6-TM | Week 6 Team Meeting | 2023-10-11 - 2023-10-17 | [jump](#w6-tm---week-6-team-meeting) |
 | W7-TM | Week 7 Team Meeting | 2023-10-18 - 2023-10-24 | [jump](#w7-tm---week-7-team-meeting) |
-| | | |
+| EXP-1| Summary of Infant Dataset Processing | 2023-10-21 | [jump](#infant-dataset-processing-methods) |
 | | | |
 | | | |
 | | | |
@@ -155,7 +155,7 @@ Potential questions:
 - Run proposal through spell and grammar check
 
 
-### Infant dataset processing methods:
+## Infant dataset processing methods
 1.  Connect to UBC’s VPN and log into MICB 475 class server through secure shell ssh on Windows Terminal.
 2.  Create a directory in the data directory called infant: /data/infant/
 3.  Import and demultiplex infant data using a manifest. Outputted files: infant_seqs.qza
