@@ -13,8 +13,8 @@ Dennis Xie
 | W5-TM | Week 5 Team Meeting | 2023-10-04 - 2023-10-10 | [jump](#w5-tm---week-5-team-meeting) |
 | W6-TM | Week 6 Team Meeting | 2023-10-11 - 2023-10-17 | [jump](#w6-tm---week-6-team-meeting) |
 | W7-TM | Week 7 Team Meeting | 2023-10-18 - 2023-10-24 | [jump](#w7-tm---week-7-team-meeting) |
-| EXP-1| Summary of Infant Dataset Processing | 2023-10-21 | [jump](#infant-dataset-processing-methods) |
-| | | |
+| EXP-1| Summary of Infant Dataset Processing | 2023-10-21 | [jump](#exp-1-infant-dataset-processing-methods) |
+| EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
 | | | |
 | | | |
 
@@ -155,7 +155,7 @@ Potential questions:
 - Run proposal through spell and grammar check
 
 
-## Infant dataset processing methods
+## EXP-1 Infant dataset processing methods
 1.  Connect to UBC’s VPN and log into MICB 475 class server through secure shell ssh on Windows Terminal.
 2.  Create a directory in the data directory called infant: /data/infant/
 3.  Import and demultiplex infant data using a manifest. Outputted files: infant_seqs.qza
@@ -171,3 +171,9 @@ Potential questions:
 10.  Tree for phylogenetic diversity analysis was generated using the rep-seqsi.qza file. Outputted files: rooted-treei.qza
 11.  Alpha rarefaction generates a rarefaction curve which was used to determine sampling depth. 23,647 was set as maximum sampling depth to retain all samples. Scp command was used to transfer visualization to local directory. Outputted files: alpha-rarefactioni.qzv
 12.  Diversity metrics for alpha and beta diversity are done at a sampling depth of 20,000. Outputted directory: core-metrics-results 
+
+## EXP-2 Combining Metadata
+The metadata for both cohorts needs to be combined on similar columns that are relevant for the future analysis.  
+Columns were determined through initial [EDA findings](https://github.com/KLE246/MICB475Project/blob/main/references/initial_metadata_analysis.xlsx)  
+Script used for combining found [HERE](https://github.com/KLE246/MICB475Project/blob/main/scripts/metadata_combining.R)  
+Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/combined_md.txt)
