@@ -15,7 +15,7 @@ Dennis Xie
 | W7-TM | Week 7 Team Meeting | 2023-10-18 - 2023-10-24 | [jump](#w7-tm---week-7-team-meeting) |
 | EXP-1| Summary of Infant Dataset Processing | 2023-10-21 | [jump](#exp-1-infant-dataset-processing-methods) |
 | EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
-| | | |
+| W8-TM | Week 8 Team Meeting | 2023-10-25 - 2023-10-31 | [jump](#w8-tm---week-8-team-meeting) |
 | | | |
 
 
@@ -177,3 +177,48 @@ The metadata for both cohorts needs to be combined on similar columns that are r
 Columns were determined through initial [EDA findings](https://github.com/KLE246/MICB475Project/blob/main/references/initial_metadata_analysis.xlsx)  
 Script used for combining found [HERE](https://github.com/KLE246/MICB475Project/blob/main/scripts/metadata_combining.R)  
 Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/combined_md.txt)
+
+
+## W8-TM - Week 8 Team Meeting
+
+### Agenda
+1. Discuss new experimental aim added in the proposal: "Determine if geographical location is a factor that influences the gut microbiota diversity in infants of different sexes."
+2. Discuss how to split up the responsibilities for the project
+
+### Meeting notes:
+- Avril approved of the experimental aim:
+  - Analyses will be similar to other experimental aims
+  - Focus will be on comparing how microbiota diversity between regions rather than replicating results
+- Specifics regarding project + analyses:
+  - QIIME2 processing has been completed and needs to be exported
+    - For taxonomy,  ensure to justify how classifer was trained
+  - Avril mentioned that Alpha diversity will be the easiest to complete, but Beta diversity and differential abundance will be more complicated
+  - Avril highlighted that we should create a combined metadata and begin formatting codes for each analysis
+    - Metadata should be formated as a R file and put into github for everyone to use
+    - Can begin formatting codes for DESeq2, Alpha-, Beta-Diversity
+  - Details about each analysis:
+    - Alpha- and beta-diversity will use vegan R package; visualized using ggplot; let Avril know of issues when running PERMANOVA
+    - DESeq2 code similar to one in module and will generate calcualted statistic
+      - May need 2 people to troubleshoot generated Volcano plot to ensure plot is clear; made through ggplot
+    - PICRUSt package may have to be installed onto QIIME, otherwise code consists of 1 big code
+      - Uses feature table and reads to generate a taxonomy table
+  - Truncation length and other parameters needs to be the same length for both datasets
+    - Option: combine all reads together and process everything
+  - Avril highlighted that we should prioritize compiling metadata, and generating diversity and taxonomic composition reads; phyloseq object will be used in further analyses
+    - We should aim to complete a rough analysis within the next 3 weeks to begin working on the rough manuscript
+- Role Splitting: *subject to change 
+
+   | Role | # People | Member |
+  | :--- | :---: | :---: |
+  | Compiling metadata | 1 | Kevin |
+  | Alpha Diversity | 1 | Michael |
+  | Beta Diversity | 1 | Dennis |
+  | Differntial Analysis (DESEq2) | 2 | Risa, Kevin |
+  | PICRUSt (QIIME2) | 1-2 | Dennis, Stella |
+
+
+ ### Tasks for the week
+- Dennis and Michael collaborate to align parameters used
+- Complete metadata compilation
+- Write skeleton codes for each analysis
+- Create phyloseq object 
