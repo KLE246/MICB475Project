@@ -13,7 +13,7 @@ Dennis Xie
 | W5-TM | Week 5 Team Meeting | 2023-10-04 - 2023-10-10 | [jump](#w5-tm---week-5-team-meeting) |
 | W6-TM | Week 6 Team Meeting | 2023-10-11 - 2023-10-17 | [jump](#w6-tm---week-6-team-meeting) |
 | W7-TM | Week 7 Team Meeting | 2023-10-18 - 2023-10-24 | [jump](#w7-tm---week-7-team-meeting) |
-| EXP-1| Summary of Infant Dataset Processing | 2023-10-21 | [jump](#exp-1-infant-dataset-processing-methods) |
+| EXP-1| Summary of Dataset Processing | 2023-10-21 | [jump](#exp-1-infant-dataset-processing-methods) |
 | EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
 | W8-TM | Week 8 Team Meeting | 2023-10-25 - 2023-10-31 | [jump](#w8-tm---week-8-team-meeting) |
 | | | |
@@ -170,7 +170,25 @@ Potential questions:
 9.  Taxonomic analysis done by training Silva 138-99 database using 515F-806R primers. Outputted files: ref-seqs-trimmed.qza, classifier.qza, taxonomyi.qza
 10.  Tree for phylogenetic diversity analysis was generated using the rep-seqsi.qza file. Outputted files: rooted-treei.qza
 11.  Alpha rarefaction generates a rarefaction curve which was used to determine sampling depth. 23,647 was set as maximum sampling depth to retain all samples. Scp command was used to transfer visualization to local directory. Outputted files: alpha-rarefactioni.qzv
-12.  Diversity metrics for alpha and beta diversity are done at a sampling depth of 20,000. Outputted directory: core-metrics-results 
+12.  Diversity metrics for alpha and beta diversity are done at a sampling depth of 20,000. Outputted directory: core-metrics-results
+
+## EXP-1 Anemia dataset processing methods 
+qiime2-2023.7 was used for data processing
+1.  Connect to UBC’s VPN and log into MICB 475 class server through secure shell ssh on Windows Terminal.
+2.  Create a directory in the data directory called infant: /data/anemia/
+3.  Import and demultiplex infant data using a manifest. Outputted files: demux_seqs_anemia.qza
+    - Infant dataset located in /mnt/datasets/project_2/anemia/
+4.  A visualization of demultiplexed samples was created and scp command was used to transfer the file to local directory. Outputted files: demux_seqs_anemia.qzv
+5.  Appropriate truncation length was determined through visualization on Qiime 2 View by looking at the interactive quality plot.
+6.  Denoise using DADA 2 package with truncation length 150, left 0. Outputted files: rep-seqs_anemia.qza, table_anemia.qza, stats_anemia.qza
+7.  Visualization for DADA 2 stats were generated and scp command was used to transfer files to the local directory. Outputted files: stats_anemia.qzv
+8.  Table (tablei.qza) file was filtered using the metadata for 6 month old infants and infants that were at least partially breastfed, as well as not anemic. Outputted files: filtered_table_infant.qza
+9.  Alpha rarefaction generates a rarefaction curve which was used to determine sampling depth. 23,647 was set as maximum sampling depth to retain all samples. Scp command was used to transfer visualization to local directory. Outputted files: alpha-rarefaction_anemia.qzv
+    
+For documentation of code please see [anemia_oct21.23](https://github.com/KLE246/MICB475Project/blob/bb10776ef5fbdb8577f50310681158929169e47d/documentation/anemia_oct21.23.sh)
+
+Oct21.23 DX
+
 
 ## EXP-2 Combining Metadata
 The metadata for both cohorts needs to be combined on similar columns that are relevant for the future analysis.  
