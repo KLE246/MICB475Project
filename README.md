@@ -16,6 +16,7 @@ Dennis Xie
 | EXP-1| Summary of Dataset Processing | 2023-10-21 | [jump](#exp-1-infant-dataset-processing-methods) |
 | EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
 | W8-TM | Week 8 Team Meeting | 2023-10-25 - 2023-10-31 | [jump](#w8-tm---week-8-team-meeting) |
+| W9-TM | Week 9 Team Meeting | 2023-11-01 - 2023-11-07 | [jump](#w9-tm---week-9-team-meeting) |
 | | | |
 
 
@@ -239,4 +240,32 @@ Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/
 - Dennis and Michael collaborate to align parameters used
 - Complete metadata compilation
 - Write skeleton codes for each analysis
-- Create phyloseq object 
+- Create phyloseq object
+
+
+## W9-TM - Week 9 Team Meeting
+
+### Agenda
+1. Discuss feedback from proposal
+2. Update on analysis progress
+
+### Meeting notes:
+- Proposal feedback:
+  - Experimental aims and research objectives felt unbalanced; more general information in aims can be redirected into research objectives
+    - Research objectives goal: provide more evidence to why a specific aspect (ie. geographical regions) is significant and how it would impact the research
+  - For resubmission, focus on comments added to rubric
+  - When performing correlation, Avril proposed us to either manually compare results of analyses or conduct an interaction effect when conducting analyses
+    - Manually: directly compare cohorts and establish a cutoff to determine if results are significantly different
+    - Interaction Effect: will test if differences between 2 cohorts is significant
+      - Code: Microbe~sex*cohort
+      - When conducting: could create box plots to correlate results from male to female in each cohort, then compare slopes between 2 cohorts
+  - Avril proposed that we should remove Experimental Aim 5 and merge analyses with aims 3 and 4 
+    - Resulting aims: Diversity, Differential Abundance, Bacterial Functional Phenotype, Geographical Comparison
+- Update on analysis progress
+  - Metadata has been compiled as a .txt file in the repo
+    - Phyloseq object will be saved as an R data
+  - Roles have been assigned
+
+
+ ### Tasks for the week
+- Complete rough analysis fpr each aim (skeleton code)
