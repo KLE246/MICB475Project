@@ -21,5 +21,5 @@ infant_cols <- infant_metadata %>%
 
 combined_df <- rbind(anemia_cols, infant_cols)
 
-write.table(combined_df, file="metadata/combined_md.txt", sep="\t", quote=FALSE)
+write.table(combined_df, file="metadata/combined_md.txt", sep="\t", quote=FALSE, row.names = FALSE)
 
