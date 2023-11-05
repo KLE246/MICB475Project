@@ -268,4 +268,4 @@ Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/
 
 
  ### Tasks for the week
-- Complete rough analysis fpr each aim (skeleton code)
+- Complete rough analysis for each aim (skeleton code)
