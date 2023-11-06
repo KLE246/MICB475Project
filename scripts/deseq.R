@@ -1,5 +1,6 @@
 library(DESeq2)
 library(phyloseq)
+library(tidyverse)
 
 # Read in phyloseq object and convert to deseq, where the control is female infants
 combined_phyloseq <- readRDS("rdata/phyloseq_final.rds")
@@ -20,7 +21,7 @@ vol_plot <- res %>%
   ggplot() +
   geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant))
 
-ggsave(filename="plots/vol_plot.png",vol_plot)
+ggsave(filename="plots/vol_plot_deseq.png",vol_plot)
 
 ## Bar plot
 # To get table of results
@@ -46,4 +47,4 @@ bar_plot <- ggplot(sigASVs) +
   geom_errorbar(aes(x=Genus, ymin=log2FoldChange-lfcSE, ymax=log2FoldChange+lfcSE)) +
   theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5))
 
-ggsave(filename="plots/bar_plot.png",bar_plot)
+ggsave(filename="plots/bar_plot_deseq.png",bar_plot)
