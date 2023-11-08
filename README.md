@@ -17,6 +17,8 @@ Dennis Xie
 | EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
 | W8-TM | Week 8 Team Meeting | 2023-10-25 - 2023-10-31 | [jump](#w8-tm---week-8-team-meeting) |
 | W9-TM | Week 9 Team Meeting | 2023-11-01 - 2023-11-07 | [jump](#w9-tm---week-9-team-meeting) |
+| W10-TM | Week 9 Team Meeting | 2023-11-08 - 2023-11-15 | [jump](#w10-tm---week-10-team-meeting) |
+| EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
 | | | |
 
 
@@ -269,3 +271,20 @@ Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/
 
  ### Tasks for the week
 - Complete rough analysis for each aim (skeleton code)
+
+## W10-TM - Week 10 Team Meeting
+
+### Agenda
+1. Discuss code progress so far
+2. Debug picrust2 error
+
+### Meeting notes:
+
+### Tasks for the week
+
+## EXP-3 Deseq Analysis
+Deseq analysis has been conducted to evaluate how gut microbial composition differs in infants of different sexes. A volcano plot has been created to evaluate differences in microbial taxa abundance between male and female infants. A bar plot has been created to show relative abundance of specific microbial taza and provide a clear representation of microbial prevalence in each sex.
+
+The following pull request shows the R script and resulting plots: https://github.com/KLE246/MICB475Project/pull/30/files.
+
+
