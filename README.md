@@ -279,8 +279,51 @@ Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/
 2. Debug picrust2 error
 
 ### Meeting notes:
+- Picrust debugging:
+  - Need to install the tool in a directory that you have write permissions to
+  - Use the same version of picrust as Avril, use the command picrust2_pipeline.py 
+- DESEq2: looking good!
+  - Lots of upregulation as opposed to downregulation in volcano plot
+  - Female was used as control; more upregulation in males
+  - Label male/female for log(2) fold change
+  - Can also filter out NA 
+- Alpha + Beta:
+  - Issue with tree
+    - Post-combining – Error: duplicate taxa
+    - Send error to Avril 
+    - Tree fails for both datasets
+  - Need to attach tree A to phyloseq A, then tree I to phyloseq I
+    - Make each phyloseq object separately then combine them
+    - Will get duplicated taxa with this: need to combine trees first then create phyloseq object
+  - Proposed: merge phylo first 
+    - Send Avril the zipped phyloseq object creation R file
+    - Leave tree out of phyloseq for now using types that don’t use tree data
+- Will be using ggpicrust2 in R for PICRUSt
+  - Will allow us to run DESEq2 – what differential abundance to run, etc
+  - Stick to DESEq2 for this
+- Results discussion:
+  - Figure out significant microbes
+  - All numbers at end of each name refers to ASV 
+  - Start with microbes with greater significance (option 1)
+    - Can focus on microbes with greater fold changes
+  - Combine ASVs and rerun (option 2)
+  - Start with general overall discussions, then cohort specific findings
+  - Can also discuss results different from literature
+  - Think about how we would like to portray that
+    - Ex. boxplot side-by-side comparison
+    - Cohort vs cohort comparison 
+    - Internal sex difference of cohort 1 vs internal sex difference of cohort 2
+  - Think about where we want each plot + which ones to put into supplementary
+    - Ex. volcano plot – likely will go into supplementary
+    - Plots not discussed in depth will go into supplementary
+
 
 ### Tasks for the week
+- Complete all coding analysis for aim 1-3, aim 4 if possible
+- Start writing methods + introductions for the final manuscript
+- Begin making presentation
+- For deseq analysis, implement Avril's suggestions: make figures presentation ready (remove NAs, male vs female in y-axis, add colours)
+- Confirm with Avril whether we’d like a meeting next week + preferred time
 
 ## EXP-3 Deseq Analysis
 Deseq analysis has been conducted to evaluate how gut microbial composition differs in infants of different sexes. A volcano plot has been created to evaluate differences in microbial taxa abundance between male and female infants. A bar plot has been created to show relative abundance of specific microbial taza and provide a clear representation of microbial prevalence in each sex.
