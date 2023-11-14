@@ -19,6 +19,7 @@ Dennis Xie
 | W9-TM | Week 9 Team Meeting | 2023-11-01 - 2023-11-07 | [jump](#w9-tm---week-9-team-meeting) |
 | W10-TM | Week 9 Team Meeting | 2023-11-08 - 2023-11-15 | [jump](#w10-tm---week-10-team-meeting) |
 | EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
+| EXP-4| Deseq Analysis (cohort investigation) | 2023-11-10 | [jump](#exp-4-deseq-analysis-cohort-investigation) |
 | | | |
 
 
@@ -286,5 +287,23 @@ Output found [HERE](https://github.com/KLE246/MICB475Project/blob/main/metadata/
 Deseq analysis has been conducted to evaluate how gut microbial composition differs in infants of different sexes. A volcano plot has been created to evaluate differences in microbial taxa abundance between male and female infants. A bar plot has been created to show relative abundance of specific microbial taza and provide a clear representation of microbial prevalence in each sex.
 
 The following pull request shows the R script and resulting plots: https://github.com/KLE246/MICB475Project/pull/30/files.
+
+
+## EXP-4 Deseq Analysis (cohort investigation)
+As stated in Aim 4, analysis of previous aims are to be done separately between cohorts.
+
+[Original Deseq bar plot with separated cohorts](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_cohort_bar_plot.png)
+
+[Looking at only similar Genus](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_cohort_bar_plot.png)
+
+Results indicate only one of the genus in the Deseq analysis were similar between the cohorts.  
+Analyis of these factors could be used for discussion  
+- role in gut, oral cavity  
+- role in diet  
+- role in environment  
+
+Since the level of sex difference varies between the two locations (comparatively higher in male in infant cohort), conclusions could be made that one location has some factors that push for a more unequal presence. Further discussion required.
+
+
 
 
