@@ -337,7 +337,7 @@ As stated in Aim 4, analysis of previous aims are to be done separately between 
 
 [Original Deseq bar plot with separated cohorts](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_cohort_bar_plot.png)
 
-[Looking at only similar Genus](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_cohort_bar_plot.png)
+[Looking at only similar Genus](https://github.com/KLE246/MICB475Project/blob/main/plots/similar_cohort_bar_plot.png)
 
 Results indicate only one of the genus in the Deseq analysis were similar between the cohorts.  
 Analyis of these factors could be used for discussion  
