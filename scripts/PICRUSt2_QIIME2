@@ -1,0 +1,45 @@
+# Activate PICRUSt2 Environment
+conda activate picrust2
+
+# Prepare input files 
+scp infant/rep-seqsi.qzv #infant; to obtain sequences.fasta file, download from view.qiime2.org
+scp infant/infant_export/table_export/feature-table.biom 
+scp anemia/rep-seqs_anemia.qzv #anemia; to obtain sequences.fasta file, download from view.qiime2.org
+scp anemia/anemia_export/table_export/feature-table.biom
+# analysis ran in directory containing all files
+
+#### Infant PICRUSt2 Analysis ####
+picrust2_pipeline.py \
+	-s sequences.fasta \
+	-i feature-table.biom \
+	-o picrust2_output_infant
+
+# Adding functional descriptions
+cd picrust2_output_infant
+add_descriptions.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz -m EC \
+                    -o EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv.gz
+
+add_descriptions.py -i pathways_out/path_abun_unstrat.tsv.gz -m METACYC \
+                    -o pathways_out/path_abun_unstrat_descrip.tsv.gz
+
+add_descriptions.py -i KO_metagenome_out/pred_metagenome_unstrat.tsv.gz -m KO \
+					-o KO_metagenome_out/pre_metagenome_unstrat_descrip.tsv.gz
+
+#### Anemia PICRUSt2 Analysis ####
+picrust2_pipeline.py \
+	-s sequences.fasta \
+	-i feature-table.biom \
+	-o picrust2_output_anemia
+
+# Adding functional descriptions
+cd picrust2_output_anemia
+add_descriptions.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz -m EC \
+                    -o EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv.gz
+
+add_descriptions.py -i pathways_out/path_abun_unstrat.tsv.gz -m METACYC \
+                    -o pathways_out/path_abun_unstrat_descrip.tsv.gz
+
+add_descriptions.py -i KO_metagenome_out/pred_metagenome_unstrat.tsv.gz -m KO \
+					-o KO_metagenome_out/pre_metagenome_unstrat_descrip.tsv.gz
+
+# Export to local computer
