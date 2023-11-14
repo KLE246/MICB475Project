@@ -19,8 +19,10 @@ ggplot(res) +
 vol_plot <- res %>%
   mutate(significant = padj<0.05 & abs(log2FoldChange)>2) %>%
   ggplot() +
-  geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant))
+  geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant)) +
+  labs(x = "male/female change", title="Significant abundance differences between male and female")
 
+vol_plot
 ggsave(filename="plots/vol_plot_deseq.png",vol_plot)
 
 ## Bar plot
@@ -40,11 +42,15 @@ sigASVs <- tax_table(combined_DESeq) %>% as.data.frame() %>%
   right_join(sigASVs) %>%
   arrange(log2FoldChange) %>%
   mutate(Genus = make.unique(Genus)) %>%
-  mutate(Genus = factor(Genus, levels=unique(Genus)))
+  mutate(Genus = factor(Genus, levels=unique(Genus)))%>%
+  filter(!grepl("NA",Genus), !is.na(Genus))
 
 bar_plot <- ggplot(sigASVs) +
-  geom_bar(aes(x=Genus, y=log2FoldChange), stat="identity")+
+  geom_bar(aes(x=Genus, y=log2FoldChange, fill=log2FoldChange>0), stat="identity")+
   geom_errorbar(aes(x=Genus, ymin=log2FoldChange-lfcSE, ymax=log2FoldChange+lfcSE)) +
-  theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5))
+  theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5)) +
+  labs(y = "male/female change", title="Change in Genus abundance between male and female")+
+  theme(legend.position="none")
 
+bar_plot
 ggsave(filename="plots/bar_plot_deseq.png",bar_plot)
