@@ -17,7 +17,7 @@ Dennis Xie
 | EXP-2| Combining of Both Metadata Sets | 2023-10-27 | [jump](#exp-2-combining-metadata) |
 | W8-TM | Week 8 Team Meeting | 2023-10-25 - 2023-10-31 | [jump](#w8-tm---week-8-team-meeting) |
 | W9-TM | Week 9 Team Meeting | 2023-11-01 - 2023-11-07 | [jump](#w9-tm---week-9-team-meeting) |
-| W10-TM | Week 9 Team Meeting | 2023-11-08 - 2023-11-15 | [jump](#w10-tm---week-10-team-meeting) |
+| W10-TM | Week 10 Team Meeting | 2023-11-08 - 2023-11-15 | [jump](#w10-tm---week-10-team-meeting) |
 | EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
 | EXP-4| Deseq Analysis (cohort investigation) | 2023-11-10 | [jump](#exp-4-deseq-analysis-cohort-investigation) |
 | | | |
@@ -346,6 +346,12 @@ Analyis of these factors could be used for discussion
 - role in environment  
 
 Since the level of sex difference varies between the two locations (comparatively higher in male in infant cohort), conclusions could be made that one location has some factors that push for a more unequal presence. Further discussion required.
+
+Update:
+
+Additional changes were made to look at only the similar Genus after grouping to allow observation of trends, not just relying on statistical significant results. 
+
+[Plot with similar Genus, highest changes]((https://github.com/KLE246/MICB475Project/blob/main/plots/separated_similar_genus_bar_plot.png))
 
 
 
