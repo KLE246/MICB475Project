@@ -351,7 +351,7 @@ Update:
 
 Additional changes were made to look at only the similar Genus after grouping to allow observation of trends, not just relying on statistical significant results. 
 
-[Plot with similar Genus, highest changes]((https://github.com/KLE246/MICB475Project/blob/main/plots/separated_similar_genus_bar_plot.png))
+[Plot with similar Genus, highest changes](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_similar_genus_bar_plot.png)
 
 
 
