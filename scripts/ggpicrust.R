@@ -9,6 +9,7 @@ library(dplyr)
 library(DESeq2)
 library(GGally)
 library(ggplot2)
+library(pheatmap)
 
 #### Combined - Sex ####
 # Load metadata
@@ -17,7 +18,7 @@ filtered_metadata_cmb <- metadata_cmb %>% filter(sex %in% c("female", "male")) #
 
 ## KEGG Orthology Pathway 
 # Input data
-input_file_ko_a <- "anemia/picrust2_output_anemia/KO_metagenome_out/pred_metagenome_unstrat.tsv" #anemia
+input_file_ko_a <- "picrust2_output_anemia/KO_metagenome_out/pred_metagenome_unstrat.tsv" #anemia
 input_file_ko_i <- "infant/picrust2_output_infant/KO_metagenome_out/pred_metagenome_unstrat.tsv" #infant
 ko_abundance_a <- read_delim(input_file_ko_a) #anemia KO abundance
 ko_abundance_i <- read_delim(input_file_ko_i) #infant KO abundance
@@ -35,16 +36,19 @@ daa_results_df_cmb <- pathway_daa(abundance = kegg_abundance_filtered, metadata 
 
 # Annotate pathway 
 daa_annotated_results_df <- pathway_annotation(pathway = "KO", daa_results_df = daa_results_df_cmb, ko_to_kegg = TRUE)
-# RESULTS: NO STATISTICAL SIGNIFICANCE
+  # RESULTS: NO STATISTICAL SIGNIFICANCE
 
 # Annotate pathway without KO to KEGG conversion
 daa_annotated_sub_method_results_df <- pathway_annotation(pathway = "KO", daa_results_df = daa_results_df_cmb, ko_to_kegg = FALSE)
-# RESULTS: NO STATISTICAL SIGNIFICANCE
+  # RESULTS: NO STATISTICAL SIGNIFICANCE
+
+# Generate PCA plot
+ko_pca_plot <- pathway_pca(abundance = kegg_abundance_filtered, metadata = filtered_metadata_cmb, group = "sex")
 
 
-## Enzyme Commission Pathway 
+## Metacyc Pathway 
 # Input data
-input_file_metacyc_a <- "anemia/picrust2_output_anemia/EC_metagenome_out/pred_metagenome_unstrat.tsv" #anemia
+input_file_metacyc_a <- "picrust2_output_anemia/EC_metagenome_out/pred_metagenome_unstrat.tsv" #anemia
 input_file_metacyc_i <- "infant/picrust2_output_infant/EC_metagenome_out/pred_metagenome_unstrat.tsv" #infant
 metacyc_abundance_a <- read_delim(input_file_metacyc_a, delim = "\t") #anemia MetaCyc abundance
 metacyc_abundance_i <- read_delim(input_file_metacyc_i, delim = "\t") #infant MetaCyc abundance
@@ -57,10 +61,15 @@ metacyc_abundance_filtered <- metacyc_abundance_merge[, c("function", common_sam
 # Perform pathway DAA using DESeq2
 metacyc_daa_results_df <- pathway_daa(abundance = metacyc_abundance_filtered %>% column_to_rownames("function"), metadata = filtered_metadata_cmb, group = "sex", daa_method = "DESeq2")
 
+# Annotate MetaCyc Pathway results
+metacyc_daa_annotated_results_df <- pathway_annotation(pathway = "MetaCyc", daa_results_df = metacyc_daa_results_df, ko_to_kegg = FALSE)
+daa_results_filtered_sub_df <- subset(metacyc_daa_annotated_results_df, p_values < 0.05)
+
+
 # Adding annotation to MetaCyc Pathway results
-input_file_metacyc_descrip_a <- "anemia/picrust2_output_anemia/EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv" #inputting anemia description file
+input_file_metacyc_descrip_a <- "picrust2_output/picrust2_output_anemia/EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv" #inputting anemia description file
 metacyc_abundance_descrip_a <- read_delim(input_file_metacyc_descrip_a, delim = "\t")
-input_file_metacyc_descrip_i <- "infant/picrust2_output_infant/EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv" #inputting infant description file
+input_file_metacyc_descrip_i <- "picrust2_output/picrust2_output_infant/EC_metagenome_out/pred_metagenome_unstrat_descrip.tsv" #inputting infant description file
 metacyc_abundance_descrip_i <- read_delim(input_file_metacyc_descrip_i, delim = "\t")
 metacyc_abundance_descrip_merg <- merge(metacyc_abundance_descrip_a, metacyc_abundance_descrip_i) #merge -- WORKED!
 names(metacyc_abundance_descrip_merg)[names(metacyc_abundance_descrip_merg) == "function"] <- "feature" #renaming function into feature to match DESeq2 data
@@ -69,11 +78,26 @@ metacyc_daa_annotated_results_df <- merge(metacyc_daa_results_df, metacyc_abunda
 # Generate PCA plot
 metacyc_pca_plot <- pathway_pca(abundance = metacyc_abundance_filtered %>% column_to_rownames("function"), metadata = filtered_metadata_cmb, group = "sex")
 
+# Generate pathway error bar plot
+metacyc_pathway <- pathway_errorbar(
+  abundance = metacyc_abundance_filtered %>% column_to_rownames("function"),
+  daa_results_df = daa_results_filtered_sub_df,
+  Group = filtered_metadata_cmb$sex,
+  ko_to_kegg = FALSE,
+  p_values_threshold = 0.06,
+  order = "group",
+  select = NULL,
+  p_value_bar = TRUE,
+  colors = NULL,
+  x_lab = "description"
+)
+  # RESULTS: NO STATISTICAL SIGNIFICANCE
 
-## Pathway Abundance
+
+## Pathway (EC) Abundance
 # Input data
-input_file_path_a <- "anemia/picrust2_output_anemia/pathways_out/path_abun_unstrat.tsv" #anemia
-input_file_path_i <- "infant/picrust2_output_infant/pathways_out/path_abun_unstrat.tsv" #infant
+input_file_path_a <- "picrust2_output/picrust2_output_anemia/pathways_out/path_abun_unstrat.tsv" #anemia
+input_file_path_i <- "picrust2_output/picrust2_output_infant/pathways_out/path_abun_unstrat.tsv" #infant
 path_abundance_a <- read_delim(input_file_path_a, delim = "\t") #anemia path abundance
 path_abundance_i <- read_delim(input_file_path_i, delim = "\t") #infant path abundance
 path_abundance_merge <- merge(path_abundance_a, path_abundance_i) #merge!
@@ -86,9 +110,9 @@ path_abundance_filtered <- path_abundance_merge[, c("pathway", common_samples_pa
 path_daa_results_df <- pathway_daa(abundance = path_abundance_filtered %>% column_to_rownames("pathway"), metadata = filtered_metadata_cmb, group = "sex", daa_method = "DESeq2")
 
 # Adding annotation to MetaCyc Pathway results
-input_file_path_descrip_a <- "anemia/picrust2_output_anemia/pathways_out/path_abun_unstrat_descrip.tsv" #inputting anemia description file
+input_file_path_descrip_a <- "picrust2_output/picrust2_output_anemia/pathways_out/path_abun_unstrat_descrip.tsv" #inputting anemia description file
 path_abundance_descrip_a <- read_delim(input_file_path_descrip_a, delim = "\t")
-input_file_path_descrip_i <- "infant/picrust2_output_infant/pathways_out/path_abun_unstrat_descrip.tsv" #inputting infant description file
+input_file_path_descrip_i <- "picrust2_output/picrust2_output_infant/pathways_out/path_abun_unstrat_descrip.tsv" #inputting infant description file
 path_abundance_descrip_i <- read_delim(input_file_path_descrip_i, delim = "\t")
 path_abundance_descrip_merg <- merge(path_abundance_descrip_a, path_abundance_descrip_i) #merge -- WORKED!
 names(path_abundance_descrip_merg)[names(path_abundance_descrip_merg) == "pathway"] <- "feature" #renaming function into feature to match DESeq2 data
@@ -97,9 +121,25 @@ path_daa_annotated_results_df <- merge(path_daa_results_df, path_abundance_descr
 # Generate PCA plot
 path_pca_plot <- pathway_pca(abundance = path_abundance_filtered %>% column_to_rownames("pathway"), metadata = filtered_metadata_cmb, group = "sex")
 
+# Generate pathway error bar plot
+path_pathway <- pathway_errorbar(
+  abundance = path_abundance_filtered %>% column_to_rownames("pathway"),
+  daa_results_df = path_daa_annotated_results_df,
+  Group = filtered_metadata_cmb$sex,
+  ko_to_kegg = FALSE,
+  p_values_threshold = 0.06,
+  order = "group",
+  select = NULL,
+  p_value_bar = TRUE,
+  colors = NULL,
+  x_lab = "description"
+)
+
 
 #### Combined - Location ####
+
 ## KEGG Orthology Pathway 
+# Input data
 ko_abundance_merg <- merge(ko_abundance_a, ko_abundance_i) #merge 
 
 # Convert KO abundance to KEGG pathway abundance
@@ -129,8 +169,11 @@ p_ko_location <- pathway_errorbar(abundance = kegg_abundance_filtered_location,
                           colors = NULL, 
                           x_lab = "pathway_name")
 
+# Generate PCA plot
+ko_pca_plot_location <- pathway_pca(abundance = kegg_abundance_filtered_location, metadata = metadata_cmb, group = "cohort")
 
-## Enzyme Commission Pathway 
+
+## Metacyc Pathway 
 metacyc_abundance_merge_location <- merge(metacyc_abundance_a, metacyc_abundance_i) #merge!
 
 # Preparing for DAA using DESeq2 
@@ -146,8 +189,23 @@ metacyc_daa_annotated_results_df_location <- merge(metacyc_daa_results_df_locati
 # Generate PCA plot
 metacyc_pca_plot_location <- pathway_pca(abundance = metacyc_abundance_filtered_location %>% column_to_rownames("function"), metadata = metadata_cmb, group = "cohort")
 
+# Generate pathway error bar plot
+selected_p_0.05_metacyc_location <- feature_with_p_0.05_metacyc_location %>% slice_head(n = 30)
+meta_pathway_location <- pathway_errorbar(
+  abundance = metacyc_abundance_filtered_location %>% column_to_rownames("function"),
+  daa_results_df = selected_p_0.05_metacyc_location,
+  Group = metadata_cmb$cohort,
+  ko_to_kegg = FALSE,
+  p_values_threshold = 0.05,
+  order = "group",
+  select = NULL,
+  p_value_bar = TRUE,
+  colors = NULL,
+  x_lab = "description"
+)
 
-## Pathway Abundance
+
+## Pathway (EC) Abundance
 path_abundance_merge_location <- merge(path_abundance_a, path_abundance_i) #merge!
 
 # Preparing for DAA using DESeq2 
@@ -162,3 +220,21 @@ path_daa_annotated_results_df_location <- merge(path_daa_results_df_location, pa
 
 # Generate PCA plot
 path_pca_plot_location <- pathway_pca(abundance = path_abundance_filtered_location %>% column_to_rownames("pathway"), metadata = metadata_cmb, group = "cohort")
+
+# Generate pathway error bar plot
+feature_with_p_0.05_path_location <- path_daa_annotated_results_df_location %>% 
+  filter(p_adjust < 0.05) # Filter features with p < 0.05
+selected_p_0.05_path_location <- feature_with_p_0.05_path_location %>% slice_head(n = 30)
+
+path_pathway_location <- pathway_errorbar(
+  abundance = path_abundance_filtered_location %>% column_to_rownames("pathway"),
+  daa_results_df = selected_p_0.05_path_location,
+  Group = metadata_cmb$cohort,
+  ko_to_kegg = FALSE,
+  p_values_threshold = 0.05,
+  order = "group",
+  select = NULL,
+  p_value_bar = TRUE,
+  colors = NULL,
+  x_lab = "description"
+)
