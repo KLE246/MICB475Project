@@ -12,7 +12,8 @@ library(microViz)
 
 # Shannon alpha diversity plot
 set.seed(1)
-phylof <- readRDS("rdata/phyloseq_final.RDS")
+phylof <- readRDS("rdata/phyloseq_final.RDS") %>%
+  ps_filter((sex == "female" | sex == "male"))
 
 gg_richness <- plot_richness(phylof, x = "sex", measures = "Shannon") +
   geom_boxplot()
@@ -33,11 +34,8 @@ wilcox.test(Shannon ~ sex, data = samp_data_wdiv, exact = FALSE)
 # 
 
 # Aim 4 split
-cohort_split <- ps_filter(phylof, (sex == "female" | sex == "male")) %>%
-  plot_richness(x = "sex", measures = "Shannon") +
-  geom_boxplot() + 
+cohort_split <- gg_richness
   facet_grid(~ cohort)
 
 ggsave(filename = "plots/plot_richness_cohort_split.png", 
        cohort_split)
-
