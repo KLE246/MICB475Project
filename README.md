@@ -20,6 +20,7 @@ Dennis Xie
 | W10-TM | Week 10 Team Meeting | 2023-11-08 - 2023-11-15 | [jump](#w10-tm---week-10-team-meeting) |
 | EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
 | EXP-4| Deseq Analysis (cohort investigation) | 2023-11-10 | [jump](#exp-4-deseq-analysis-cohort-investigation) |
+| W11-TM | Week 11 Team Meeting | 2023-11-16 - 2023-11-22 | [jump](#w11-tm---week-11-team-meeting) |
 | | | |
 
 
@@ -353,6 +354,63 @@ Additional changes were made to look at only the similar Genus after grouping to
 
 [Plot with similar Genus, highest changes](https://github.com/KLE246/MICB475Project/blob/main/plots/separated_similar_genus_bar_plot.png)
 
+## W11-TM - Week 11 Team Meeting
 
-
+- Bottom of lab notebook – 2 links to 2 plots
+  - Change in genus abundance between male + female plot
+    - Only 1 genus in common between both cohorts – based off DESeq2 analysis plotting significant ones
+    - Could be due to filtering leading to a smaller dataset; anemia may be more powerful as there’s more datasets
+    - plot values for ALL of microbes so every column has a value for anemia + infant; make it a bit transparent if not significant
+      - Could just not be significant due to difference in power
+    - Genus shared between cohorts would be good; if there are differences could be due to geographical factors
+    - Potential workaround: May see more overlap at genus level rather than asv level
+      - ASV’s more likely to be more specific to the population studying
+- Bar plot 2 – male/female change
+    - Looking at the one genus similar to both
+    - Would be the plot we want for aim 4 – looking at just 1 microbe isn’t as robust as we’d like
+      - Can just look at genus level to see for we can get more results
+        - Avril suggests making box plots if we plan on subsetting a specific microbe
+          - Can convert to relative abundance, then show amount for male/females in box plot and put them side by side
+          - Result – 4 boxes in 1 boxplot 
+            - To see what the actual abundances are and give more information 
+        - Would be typical to have DESeq as main results; box plots and subsetted plots can be supplementary
+          - Could make a page of box plots and put in supplementary and reference when needed
+        - Avril recommends adding in values for all microbes even if not significant
+          - Need a lot more power for infant one – could explain insignificance
+          - Aim: have plot like deseq2 one, show significance/non-signifiance using  transparency, then discuss results – can refer to results visually rather than statistically
+  - Command for aggregating genus: tax_glom('Species')
+    - Will be done directly to phyloseq object before subsetting 
+- Shannon Alpha Diversity
+  - Similar story to other boxplot
+  - Basically none of alpha diversity had any significance
+    - Comment: pretty typical for alpha diversity to have much significance
+      - Should be fine for it to not be significant – can just say “Alpha diversity is not significant”
+  - Asked if it’s ok if we just briefly talk about it 
+    - Worth it to talk about DESeq2 but with something like Alpha diversity, it’s fine to just leave it this way
+- ggpicrust2
+  - Calculate statistics for pca for sex – worth running
+  - Show – overall pathway + function = subtle
+  - PCA = good
+  - Metacyc – include pathways; could say that these are significant 
+    - Take one and make a box plot of pathway with each group of interest
+  - Kegg – if there aren’t significant results overall, don’t worry too much
+    - Focus on the ones that ARE significant
+    - Since infant isn’t as big, it might result in difference in power
+  - Plotting – plot all 4 groups and see significance
+    - Then see trends
+  - Don’t HAVE to analysis everything – can just focus on one analysis pathway
+- Beta diversity
+  - No significant when looking at sex, but there is significance when looking at cohort
+  - Can we put more focus on cohort?
+    - May lose some of the work already done with sex
+  - Avril – potentially could focus more on geography if sex is not working out well (would need to run with Evelyn)
+  - Could also flip it – focus on geography and then use sex differences as a supplementary
+- For next week – need to start building up manuscript
+  - Make a big google slides with all figures to start piecing together what the overall story is
+  - Don’t need to include ALL data but need to include all necessary data to tell the story
+- GOALS:
+  - Aggregate everything into document
+  - Should have an understanding of what the paper should look like, what figures will be in the paper
+    - Manuscript skeleton/outline OR manuscript draft (stretch)
+- Make sure to send draft manuscript to Avril ASAP to give him enough time to work through it
 
