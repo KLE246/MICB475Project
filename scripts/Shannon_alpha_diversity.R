@@ -34,8 +34,8 @@ wilcox.test(Shannon ~ sex, data = samp_data_wdiv, exact = FALSE)
 # 
 
 # Aim 4 split
-cohort_split <- gg_richness
+cohort_split <- gg_richness +
   facet_grid(~ cohort)
-
+  
 ggsave(filename = "plots/plot_richness_cohort_split.png", 
        cohort_split)
