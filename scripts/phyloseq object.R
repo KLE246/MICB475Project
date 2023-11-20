@@ -58,9 +58,10 @@ for (i in which(duplicate)) {
 treef$tip.label <- treei
 
 # phyloseq objects 
-phyloanemia <- phyloseq(SAMP, OTUA, TAXA, treef)
+phyloanemia <- phyloseq(SAMP, OTUA, TAXA)
 phyloinfant <- phyloseq(SAMP, OTUI, TAXI)
 
-phylofinal <- merge_phyloseq(phyloanemia, phyloinfant)
+phylo <- merge_phyloseq(phyloanemia, phyloinfant)
+phylofinal <- merge_phyloseq(phylo, treef)
 
-saveRDS(phylofinal, file = "rdata/phyloseq_final.rds")
+saveRDS(phylofinal, file = "phyloseq_final.rds")
