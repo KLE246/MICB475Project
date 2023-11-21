@@ -21,6 +21,8 @@ Dennis Xie
 | EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
 | EXP-4| Deseq Analysis (cohort investigation) | 2023-11-10 | [jump](#exp-4-deseq-analysis-cohort-investigation) |
 | W11-TM | Week 11 Team Meeting | 2023-11-16 - 2023-11-22 | [jump](#w11-tm---week-11-team-meeting) |
+| EXP-5 | Taxonomy analysis | 2023-11-15 | [jump](#exp-5-taxonomy-analysis) |
+| EXP-6 | Beta diversity analysis | 2023-11-15 | [jump](#exp-6-beta-diversity-analysis) |
 | | | |
 
 
