@@ -414,3 +414,13 @@ Additional changes were made to look at only the similar Genus after grouping to
     - Manuscript skeleton/outline OR manuscript draft (stretch)
 - Make sure to send draft manuscript to Avril ASAP to give him enough time to work through it
 
+## EXP-5 Taxonomy Analysis
+[taxonomy plot sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_sex.png)
+[taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_cohort.png)
+
+## EXP-6 Beta Diversity Analysis
+Beta diversity analysis using the Bray-Curtis dissimilarity gut microbe population between different sex groups as well as between different cohorts. PCA plot is used to visualize beta diversity.
+Use PERMANOVA to determine if beta diversity is significantly different between the groups. 
+
+[PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_sex.png)
+[PCA plot between cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_cohort.png)
