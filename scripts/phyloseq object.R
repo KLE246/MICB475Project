@@ -64,4 +64,4 @@ phyloinfant <- phyloseq(SAMP, OTUI, TAXI)
 phylo <- merge_phyloseq(phyloanemia, phyloinfant)
 phylofinal <- merge_phyloseq(phylo, treef)
 
-saveRDS(phylofinal, file = "phyloseq_final.rds")
+saveRDS(phylofinal, file = "rdata/phyloseq_final.rds")
