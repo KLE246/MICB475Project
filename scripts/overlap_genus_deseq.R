@@ -33,8 +33,7 @@ anemia_sigASVs_tax <- tax_table(anemia_pruned) %>% as.data.frame() %>%
   mutate(Genus = make.unique(Genus)) %>%
   mutate(Genus = factor(Genus, levels=unique(Genus)))%>%
   filter(!grepl("NA.",Genus), !is.na(Genus)) %>%
-  mutate(cohort = "Peru")#%>%
-  # filter(abs(log2FoldChange)>2)
+  mutate(cohort = "Peru")
 
 ### Repeat for infant cohort
 infant_phyloseq = subset_samples(combined_phyloseq, cohort == "infant")
@@ -62,8 +61,7 @@ infant_sigASVs_tax <- tax_table(infant_pruned) %>% as.data.frame() %>%
   mutate(Genus = make.unique(Genus)) %>%
   mutate(Genus = factor(Genus, levels=unique(Genus)))%>%
   filter(!grepl("NA.",Genus), !is.na(Genus)) %>%
-  mutate(cohort = "California") #%>%
-  #filter(Genus %in% anemia_sigASVs_tax$Genus | abs(log2FoldChange) > 2)
+  mutate(cohort = "California")
 
 
 combined_results <- rbind(anemia_sigASVs_tax, infant_sigASVs_tax) %>%
