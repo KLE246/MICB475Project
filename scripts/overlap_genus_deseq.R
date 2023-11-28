@@ -33,8 +33,7 @@ anemia_sigASVs_tax <- tax_table(anemia_pruned) %>% as.data.frame() %>%
   mutate(Genus = make.unique(Genus)) %>%
   mutate(Genus = factor(Genus, levels=unique(Genus)))%>%
   filter(!grepl("NA.",Genus), !is.na(Genus)) %>%
-  mutate(cohort = "anemia")%>%
-  filter(abs(log2FoldChange)>2)
+  mutate(cohort = "Peru")
 
 ### Repeat for infant cohort
 infant_phyloseq = subset_samples(combined_phyloseq, cohort == "infant")
@@ -62,12 +61,18 @@ infant_sigASVs_tax <- tax_table(infant_pruned) %>% as.data.frame() %>%
   mutate(Genus = make.unique(Genus)) %>%
   mutate(Genus = factor(Genus, levels=unique(Genus)))%>%
   filter(!grepl("NA.",Genus), !is.na(Genus)) %>%
-  mutate(cohort = "infant") %>%
-  filter(Genus %in% anemia_sigASVs_tax$Genus | abs(log2FoldChange) > 2)
+  mutate(cohort = "California")
 
 
 combined_results <- rbind(anemia_sigASVs_tax, infant_sigASVs_tax) %>%
   mutate(significance = (abs(log2FoldChange) > 2 & padj<0.05))
+
+significant_taxa <- combined_results %>%
+  filter(significance == TRUE) %>%
+  filter(Genus != " g__uncultured.12")
+
+combined_results <- combined_results %>%
+  filter(Genus %in% significant_taxa$Genus)
 
 bar_plot <- ggplot(combined_results) +
   geom_bar(aes(x=Genus, y=log2FoldChange, fill=log2FoldChange>0, alpha = significance), stat="identity")+
