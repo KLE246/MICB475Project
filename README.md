@@ -23,6 +23,7 @@ Dennis Xie
 | W11-TM | Week 11 Team Meeting | 2023-11-16 - 2023-11-22 | [jump](#w11-tm---week-11-team-meeting) |
 | EXP-5 | Taxonomy analysis | 2023-11-15 | [jump](#exp-5-taxonomy-analysis) |
 | EXP-6 | Beta diversity analysis | 2023-11-15 | [jump](#exp-6-beta-diversity-analysis) |
+| W12-TM | Week 12 Team Meeting | 2023-11-23 - 2023-11-29 | [jump](#w12-tm---week-12-team-meeting) |
 | | | |
 
 
@@ -426,3 +427,89 @@ Use PERMANOVA to determine if beta diversity is significantly different between 
 
 [PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_sex.png)
 [PCA plot between cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_cohort.png)
+
+## W12-TM - Week 12 Team Meeting
+
+- note proteobacteria difference
+ALPHA
+- No significance grouped by sex or cohort
+- P-values were quite high
+- Aim 4 splitting between cohorts
+  - magnitude/levels similar within groups, sex differences quite similar
+- **RELABEL TO CALIFORNIA (infant) + PERU (anemia)
+BETA
+- Sex – not a lot of differences + no significance
+  - Circle groupings for sex even if not significant
+- Used PERMANOVA to look at p-values
+  - Compared between cohorts – significant
+Taxonomy
+- Cohort – a lot more proteobacteria 
+  - Pro-inflammatory bacteria; typically want less of this
+  - Huge difference between cohorts
+DESeq2
+- 27 taxa with increased abundance + 2 taxa with decreased
+- Volcano plot – will likely not include in main; will be in supplementary to show that there’s lots of taxa in decrease
+  - DESeq2 = male/female
+- Cohort 
+  - Lots of genera where it’s not significant in either cohort
+    - Was composed by just looking at higher ones
+    - Evelyn would like us to just show significant ones
+    - If not significant in BOTH – just remove
+  - Will have ~12 total – should be good enough
+  - Instead of showing things not signifiant in both, just showcase ones significant in at least 1
+    - Obtain vector of taxa significant in at least 1 then showcase it in the graph
+PICRUSt2
+- **filter – log2 fold change of ~2 – +- 2 for the fold changes
+- Or 1 – 2x as much
+- Organize by relative abundance so highest at top
+  - TAKE-HOME MESSAGE:
+- Not too much difference in sex and cohort does
+- Pick out based on research already done on sex differences for babies, etc
+
+If results showcase results relevant to breast milk, geography, etc – can talk about this
+- Potentially could speak on different water quality, environmental, etc
+- Could try to run deseq2 on just the cohorts, then check sex differences
+Alpha + beta keep sex + cohort
+- End sex differences there
+- And say that we then decided to focus on environmental due to more significance
+- Paper + project – focus on diversity in sex first, then cohort after
+  - Areas to discuss = enzymes, metabolic pathways, etc
+  - Don’t extrapolate too much
+- Focus more on characterizing rather than trying to figure out reasoning
+  - Can mention generic variables that typically are related to geographical changes, rather than discussing specific pathways that might be involved due to a specific factor
+Discussion 
+- Can talk about what a specific results might mean due to their functions
+- Add context to the bacteria + function results
+- What it means to have these results
+- Can also bring in other studies 
+- Figure out how does our data fit into other people’s studies
+- Can look at ones with similar geography to our cohorts of choice
+  - Find comparable studies!
+- Also worth mentioning regardless of whether a specific study agrees OR disagrees with our data
+- Rationale of our study has been changed
+  - Try to justify why we’d also want to look at sex difference
+  - LIMITATION – different sample collection methods
+    - Tried our best to match up data but will be a limitation with how the data was originally collected
+- alpha/beta – can just say it’s not significant
+CONCLUSION/SUMMARIZE
+- alpha/beta/taxonomy – include taxonomy part
+  - focus: proteobacteria
+  - Alpha + beta – alpha Shannon was just displayed – other alpha non-significant
+    - Quickly mention that it was NOT significant then move on
+  - Beta – only bray curtis conducted
+  - OVERALL: alpha+beta cohort/sex – 1 figure; multiple panels
+    - Taxonomy in separate figure (by itself)
+- DESeq2
+  - Will need to conduct with COHORT rather than male/female
+  - Don’t need to include sex at all 
+  - 1 figure – volcano + bar plot beside it (cohort)
+- PICRUSt2
+  - 1 for picrust – 4th figure
+  - Only focus on METACYC
+    - ***metacyc and EC are SWAPPED – RENAME THEM
+FOR NEXT WEEK:
+- Get presentation ready!! (finalise plots (4) on the slides)
+- Mock presentation
+- Feedback
+- Draft manuscript 
+- Can have meeting the week of when it’s due (optional – WE SHOULD DO THIS!)
