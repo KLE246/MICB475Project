@@ -24,7 +24,7 @@ Dennis Xie
 | EXP-5 | Taxonomy analysis | 2023-11-15 | [jump](#exp-5-taxonomy-analysis) |
 | EXP-6 | Beta diversity analysis | 2023-11-15 | [jump](#exp-6-beta-diversity-analysis) |
 | W12-TM | Week 12 Team Meeting | 2023-11-23 - 2023-11-29 | [jump](#w12-tm---week-12-team-meeting) |
-| | | |
+| W13-TM | Week 13 Team Meeting | 2023-11-30 - 2023-11-10 | [jump](#w13-tm---week-13-team-meeting) |
 
 
 ## W5-TM - Week 5 Team Meeting
@@ -513,3 +513,20 @@ FOR NEXT WEEK:
 - Feedback
 - Draft manuscript 
 - Can have meeting the week of when it’s due (optional – WE SHOULD DO THIS!)
+
+## W13-TM - Week 13 Team Meeting
+
+- focus on geographical differences, meaning shorten to summarise
+- example: shorten introduction to stay on target
+- phrase things in a less definitive manner, ex. microbiome to health relationship is still a correlation, definitive causative statements should not be made
+- definition of healthy needs to be cleared in the context of our paper
+- Why does it matter to know about differences between locations? State in abstract and introduction
+- In discussions, we don’t need multiple headers, it would all be the same section
+- Alpha diversity should be mentioned, but in supplemental
+- Make Peru plot wider in taxonomy bar plot to show X-axis
+- in Deseq figure, volcano may be better as A figure, increase font size
+- cut off adjusted p-values in PICRUST2 plot, probably not needed
+- Plots to include in supplemental 
+  - alpha diversity (put p-value on the plot)
+  - picrust metacyc PCA plot (put p-value on the plot) could also be included in main manuscript
+- In discussion, combine taxonomic and functional conclusions together 
