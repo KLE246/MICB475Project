@@ -24,7 +24,8 @@ Dennis Xie
 | EXP-5 | Taxonomy analysis | 2023-11-15 | [jump](#exp-5-taxonomy-analysis) |
 | EXP-6 | Beta diversity analysis | 2023-11-15 | [jump](#exp-6-beta-diversity-analysis) |
 | W12-TM | Week 12 Team Meeting | 2023-11-23 - 2023-11-29 | [jump](#w12-tm---week-12-team-meeting) |
-| W13-TM | Week 13 Team Meeting | 2023-11-30 - 2023-11-10 | [jump](#w13-tm---week-13-team-meeting) |
+| W13-TM | Week 13 Team Meeting | 2023-11-30 - 2023-12-10 | [jump](#w13-tm---week-13-team-meeting) |
+| EXP-7 | Bacterial Functional analysis | 2023-12-10 | [jump](#exp-7-bacterial-functional-analysis) |
 
 
 ## W5-TM - Week 5 Team Meeting
@@ -530,3 +531,20 @@ FOR NEXT WEEK:
   - alpha diversity (put p-value on the plot)
   - picrust metacyc PCA plot (put p-value on the plot) could also be included in main manuscript
 - In discussion, combine taxonomic and functional conclusions together 
+
+## EXP-7 - Bacterial Functional Analysis
+Bacterial functional analysis conducted using PICRUSt2 between different sex groups and cohort groups. Differential abundance analysis conducted employing DESeq2 where KEGG (genes and genomes), MetaCyc (metabolic pathways), and EC (enzyme commision) were compared between study groups and annotated. 
+- Sex group analysis:
+  - [KO PCA plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/KO_PCA_Plot_Sex.png) - no significance; unable to annotate due to lack significant comparisons
+  - [MetaCyc PCA plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/Metacyc_PCA_Plot_Sex.png) and [MetaCyc Bar plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/Metacyc_Pathway_Error_Sex.png) - insignificant overlapping in PCA; 2 inositol-related degradation pathways seen to be significant in male relative to female
+  - [EC PCA plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/EC_PCA_Plot_Sex.png) and [EC Bar plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/EC_Pathway_Error_Sex.png) - no significance with lots of overlapping in PCA; although bar plot was composed, adjust p-values were > 0.05
+- Cohort group analysis:
+  - [KO PCA plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/KO_PCA_Plot_Cohort.png) and [KO Bar plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/KO_Pathway_Error_Cohort.png) - significant dissimilarity in KEGG analysis observed between cohorts with overrepresentation seen in anemia (Peru) cohort relative to infant (California)
+  - [MetaCyc PCA plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/Metacyc_PCA_Plot_Cohort.png) and [MetaCyc Bar plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/Metacyc_Pathway_Error_Cohort.png) - significant dissimilarity observed in metabolic pathways between cohorts with overrepresentation of pathways observed in anemia (Peru) cohort relative to infant (California) cohort
+  - [EC PCA plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/EC_PCA_Plot_Cohort.png) and [EC Bar plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/EC_Pathway_Error_Cohort.png) - significant dissimilarity in representation of enzymes between with similar abundance of enzymes seen in both cohorts
+Results indicate insignificance in bacterial functions between sex, and significance between cohorts. Due to this, focus will be emphasized on analyzing the differences seen when comparing our geographical locations.
+- Avril has advised us to dig deeper into the metabolic pathway annotations and explore their roles to infants
+Update:
+Plots for MetaCyc (metabolic pathway) analysis between cohorts were updated to input into the manuscript. Log2 fold change of -/+1 were used to subset findings.
+
+[Updated MetaCyc PCA plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/PCA_Metacyc_Cohort_Updated.png) [Updated Metacyc bar plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/Pathway_Error_Metacyc_Cohort_Updated.png)
