@@ -532,7 +532,7 @@ FOR NEXT WEEK:
   - picrust metacyc PCA plot (put p-value on the plot) could also be included in main manuscript
 - In discussion, combine taxonomic and functional conclusions together 
 
-## EXP-7 - Bacterial Functional Analysis
+## EXP-7 Bacterial Functional Analysis
 Bacterial functional analysis conducted using PICRUSt2 between different sex groups and cohort groups. Differential abundance analysis conducted employing DESeq2 where KEGG (genes and genomes), MetaCyc (metabolic pathways), and EC (enzyme commision) were compared between study groups and annotated. 
 - Sex group analysis:
   - [KO PCA plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/KO_PCA_Plot_Sex.png) - no significance; unable to annotate due to lack significant comparisons
