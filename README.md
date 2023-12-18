@@ -427,24 +427,35 @@ Shannon alpha diversity was assessed between different sex and locations (cohort
 
 ## EXP-6 Taxonomy Analysis
 Taxonomic analysis shows how the gut microbial composition differs in infants of different sexes and cohorts.
+
 Taxonomy bar plot by sex
+
 - Shows similar distribution of phylum from gut microbiome of male and female infants
+  
 [taxonomy plot sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_sex.png)
+
 Taxonomy bar plot by cohort
-- Shows variance in the distribution of phylum from gut microbiome between different cohort 
+
+- Shows variance in the distribution of phylum from gut microbiome between different cohort
 - The California cohort seems to have a larger distribution of proteobacteria and a smaller distribution of actinobacteria and firmicutes
+  
 [taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/Taxonomy%20plot%20phylum%20cohort.bmp)
 
 ## EXP-7 Beta Diversity Analysis
 Beta diversity analysis using the Bray-Curtis dissimilarity gut microbe population between different sex groups as well as between different cohorts. PCA plot is used to visualize beta diversity.
 Use PERMANOVA to determine if beta diversity is significantly different between the groups. 
+
 Beta Diversity PCA plot by sex
 - Shows no distinct grouping between male and female 
 - Statistical testing using PERMANOVA comparing sex shows it is not significant p = 0.218
+
 [PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/main/plots/PCA%20bray%20sex.bmp)
+
 Beta Diversity PCA plot by cohort
+
 - Shows distinct grouping between infants from different cohort
 - Statistical testing using PERMANOVA comparing cohort shows it is significant p < 0.001
+
 [PCA plot between cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_cohort.png)
 
 ## W12-TM - Week 12 Team Meeting
