@@ -345,7 +345,7 @@ As stated in Aim 4, analysis of previous aims are to be done separately between 
 [Looking at only similar Genus](https://github.com/KLE246/MICB475Project/blob/main/plots/similar_cohort_bar_plot.png)
 
 Results indicate only one of the genus in the Deseq analysis were similar between the cohorts.  
-Analyis of these factors could be used for discussion  
+Analysis of these factors could be used for discussion  
 - role in gut, oral cavity  
 - role in diet  
 - role in environment  
@@ -419,6 +419,9 @@ Additional changes were made to look at only the similar Genus after grouping to
 - Make sure to send draft manuscript to Avril ASAP to give him enough time to work through it
 
 ## EXP-5 Taxonomy Analysis
+Taxonomic analysis was used to show how the gut microbial composition differs in infants of different sexes and locations.
+SEX
+- bacteria communities are similariy  
 [taxonomy plot sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_sex.png)
 [taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_cohort.png)
 
