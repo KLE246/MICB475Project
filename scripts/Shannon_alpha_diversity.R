@@ -27,7 +27,7 @@ set.seed(1)
 phylofi <- readRDS("rdata/phyloseq_final.RDS") %>%
   ps_filter((cohort == "anemia" | sex == "infant"))
 
-gg_richness <- plot_richness(phylof, x = "cohort", measures = "Shannon") +
+gg_richness <- plot_richness(phylofi, x = "cohort", measures = "Shannon") +
   geom_boxplot()
 gg_richness
 
