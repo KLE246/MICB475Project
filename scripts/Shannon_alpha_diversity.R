@@ -22,6 +22,18 @@ gg_richness
 ggsave(filename = "plots/plot_richness.png", 
        gg_richness)
 
+# repeat for location 
+set.seed(1)
+phylofi <- readRDS("rdata/phyloseq_final.RDS") %>%
+  ps_filter((cohort == "anemia" | sex == "infant"))
+
+gg_richness <- plot_richness(phylof, x = "cohort", measures = "Shannon") +
+  geom_boxplot()
+gg_richness
+
+ggsave(filename = "plots/plot_richness_cohort.png", 
+       gg_richness)
+
 # combine data and richness
 alphadiv <- estimate_richness(phylof, measures = "Shannon")
 samp_data <- sample_data(phylof)
