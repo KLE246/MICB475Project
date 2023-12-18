@@ -441,7 +441,7 @@ Use PERMANOVA to determine if beta diversity is significantly different between 
 Beta Diversity PCA plot by sex
 - Shows no distinct grouping between male and female 
 - Statistical testing using PERMANOVA comparing sex shows it is not significant p = 0.218
-[PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_sex.png](https://github.com/KLE246/MICB475Project/blob/main/plots/PCA%20bray%20sex.bmp)
+[PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/main/plots/PCA%20bray%20sex.bmp)
 Beta Diversity PCA plot by cohort
 - Shows distinct grouping between infants from different cohort
 - Statistical testing using PERMANOVA comparing cohort shows it is significant p < 0.001
