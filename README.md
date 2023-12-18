@@ -197,7 +197,6 @@ qiime2-2023.7 was used for data processing
     
 For documentation of code please see [anemia_oct21.23](https://github.com/KLE246/MICB475Project/blob/bb10776ef5fbdb8577f50310681158929169e47d/documentation/anemia_oct21.23.sh)
 
-Oct21.23 DX
 
 
 ## EXP-2 Combining Metadata
@@ -434,7 +433,7 @@ Taxonomy bar plot by sex
 Taxonomy bar plot by cohort
 - Shows variance in the distribution of phylum from gut microbiome between different cohort 
 - The California cohort seems to have a larger distribution of proteobacteria and a smaller distribution of actinobacteria and firmicutes
-[taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_cohort.png)
+[taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/Taxonomy%20plot%20phylum%20cohort.bmp)
 
 ## EXP-7 Beta Diversity Analysis
 Beta diversity analysis using the Bray-Curtis dissimilarity gut microbe population between different sex groups as well as between different cohorts. PCA plot is used to visualize beta diversity.
@@ -442,7 +441,7 @@ Use PERMANOVA to determine if beta diversity is significantly different between 
 Beta Diversity PCA plot by sex
 - Shows no distinct grouping between male and female 
 - Statistical testing using PERMANOVA comparing sex shows it is not significant p = 0.218
-[PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_sex.png)
+[PCA plot between sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/PCA_bray_sex.png](https://github.com/KLE246/MICB475Project/blob/main/plots/PCA%20bray%20sex.bmp))
 Beta Diversity PCA plot by cohort
 - Shows distinct grouping between infants from different cohort
 - Statistical testing using PERMANOVA comparing cohort shows it is significant p < 0.001
