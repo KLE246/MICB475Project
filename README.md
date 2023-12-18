@@ -420,11 +420,11 @@ Additional changes were made to look at only the similar Genus after grouping to
 - Make sure to send draft manuscript to Avril ASAP to give him enough time to work through it
 
 ## EXP-5 Alpha Diversity Analysis 
-Shannon alpha diversity was assessed between different sex and locations (cohort). Wilcoxon rank sum test used to test significance. 
-[scripts for alpha diversity analysis](https://github.com/KLE246/MICB475Project/blob/main/scripts/Shannon_alpha_diversity.R)
-[shannon alpha diversity between sex](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness.png)
-[shannon alpha diversity between cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort.png)
-[shannon alpha diversity cohort split](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort_split.png)
+Shannon alpha diversity was assessed between different sex and locations (cohort). Wilcoxon rank sum test used to test significance. Shannon alpha diversity was found to be not significant between sex and location. 
+- [scripts for alpha diversity analysis](https://github.com/KLE246/MICB475Project/blob/main/scripts/Shannon_alpha_diversity.R)
+- [shannon alpha diversity between sex](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness.png)
+- [shannon alpha diversity between cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort.png)
+- [shannon alpha diversity cohort split](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort_split.png)
 
 ## EXP-6 Taxonomy Analysis
 [taxonomy plot sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_sex.png)
