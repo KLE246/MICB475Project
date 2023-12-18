@@ -21,11 +21,12 @@ Dennis Xie
 | EXP-3| Deseq Analysis | 2023-11-07 | [jump](#exp-3-deseq-analysis) |
 | EXP-4| Deseq Analysis (cohort investigation) | 2023-11-10 | [jump](#exp-4-deseq-analysis-cohort-investigation) |
 | W11-TM | Week 11 Team Meeting | 2023-11-16 - 2023-11-22 | [jump](#w11-tm---week-11-team-meeting) |
-| EXP-5 | Taxonomy analysis | 2023-11-15 | [jump](#exp-5-taxonomy-analysis) |
-| EXP-6 | Beta diversity analysis | 2023-11-15 | [jump](#exp-6-beta-diversity-analysis) |
+| EXP-5 | Alpha diversity analysis | 2023-11-15 | [jump](#exp-5-alpha-diversity-analysis) |
+| EXP-6 | Taxonomy analysis | 2023-11-15 | [jump](#exp-6-taxonomy-analysis) |
+| EXP-7 | Beta diversity analysis | 2023-11-15 | [jump](#exp-7-beta-diversity-analysis) |
 | W12-TM | Week 12 Team Meeting | 2023-11-23 - 2023-11-29 | [jump](#w12-tm---week-12-team-meeting) |
 | W13-TM | Week 13 Team Meeting | 2023-11-30 - 2023-12-10 | [jump](#w13-tm---week-13-team-meeting) |
-| EXP-7 | Bacterial Functional analysis | 2023-12-10 | [jump](#exp-7-bacterial-functional-analysis) |
+| EXP-8 | Bacterial Functional analysis | 2023-12-10 | [jump](#exp-8-bacterial-functional-analysis) |
 
 
 ## W5-TM - Week 5 Team Meeting
@@ -418,11 +419,18 @@ Additional changes were made to look at only the similar Genus after grouping to
     - Manuscript skeleton/outline OR manuscript draft (stretch)
 - Make sure to send draft manuscript to Avril ASAP to give him enough time to work through it
 
-## EXP-5 Taxonomy Analysis
+## EXP-5 Alpha Diversity Analysis 
+Shannon alpha diversity was assessed between different sex and locations (cohort). Wilcoxon rank sum test used to test significance. 
+[scripts for alpha diversity analysis](https://github.com/KLE246/MICB475Project/blob/main/scripts/Shannon_alpha_diversity.R)
+[shannon alpha diversity between sex](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness.png)
+[shannon alpha diversity between cohort](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort.png)
+[shannon alpha diversity cohort split](https://github.com/KLE246/MICB475Project/blob/main/plots/plot_richness_cohort_split.png)
+
+## EXP-6 Taxonomy Analysis
 [taxonomy plot sex](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_sex.png)
 [taxonomy plot cohort](https://github.com/KLE246/MICB475Project/blob/8910021926512f67abcbc14244b20b82bd2b44d8/plots/Taxonomy_plot_phylum_cohort.png)
 
-## EXP-6 Beta Diversity Analysis
+## EXP-7 Beta Diversity Analysis
 Beta diversity analysis using the Bray-Curtis dissimilarity gut microbe population between different sex groups as well as between different cohorts. PCA plot is used to visualize beta diversity.
 Use PERMANOVA to determine if beta diversity is significantly different between the groups. 
 
@@ -532,7 +540,7 @@ FOR NEXT WEEK:
   - picrust metacyc PCA plot (put p-value on the plot) could also be included in main manuscript
 - In discussion, combine taxonomic and functional conclusions together 
 
-## EXP-7 Bacterial Functional Analysis
+## EXP-8 Bacterial Functional Analysis
 Bacterial functional analysis conducted using PICRUSt2 between different sex groups and cohort groups. Differential abundance analysis conducted employing DESeq2 where KEGG (genes and genomes), MetaCyc (metabolic pathways), and EC (enzyme commision) were compared between study groups and annotated. 
 - Sex group analysis:
   - [KO PCA plot sex](https://github.com/KLE246/MICB475Project/blob/main/plots/KO_PCA_Plot_Sex.png) - no significance; unable to annotate due to lack significant comparisons
